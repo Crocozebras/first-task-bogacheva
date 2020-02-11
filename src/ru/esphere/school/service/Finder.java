@@ -17,7 +17,7 @@ public class Finder {
         return groups.stream() // создаем Stream<MembersGroup>
                 .flatMap(membersGroup -> membersGroup.getMembers().stream()) // Разворачиваем стрим групп в Stream<Member>
                 .filter(member -> member.getAge() > targetAge) // Отбираем людей старше заданного возраста
-                .map(Member::getName) // Применяем к отфильрованному Stream<Member> функцию getName класса Member, превращая его в Stream<String>
-                .collect(Collectors.toSet()); // Применяет терминальный метод, возвращающий Set<String>
+                .map(Member::getName) // Применяем к отфильтрованному Stream<Member> функцию getName класса Member, превращая его в Stream<String>
+                .collect(Collectors.toSet()); // Применяет терминальный метод, возвращающий Set<String>.
     }
 }
